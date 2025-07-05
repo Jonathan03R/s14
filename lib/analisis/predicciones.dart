@@ -4,6 +4,26 @@ import 'package:ml_dataframe/ml_dataframe.dart';
 class predicciones {
   predicciones();
 
+  Future<void> RegLog() async {
+    final feature = DataFrame([
+      ['feature_1', 'feature_2', 'output'],
+      [21, 2, 1],
+      [3, 33, 1],
+      [41, 4, 0],
+      [5, 50, 0],
+    ]);
+    final model = LogisticRegressor(feature, 'output');
+    final testData = DataFrame([
+      ['feature_1', 'feature_2', 'output'],
+      [8, 12],
+      [9, 20],
+    ]);
+    print('Prediccion: ${model.predict(testData)}');
+    print(model.assess(feature, MetricType.accuracy));
+    final pre = model.assess(feature, MetricType.precision);
+    print('precision: $pre');
+  }
+
   Future<void> KNN() async {
     final features = DataFrame([
       ['feature_1', 'feature_2', 'output'],

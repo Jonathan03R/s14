@@ -26,7 +26,8 @@ class MyApp extends StatelessWidget {
                 child: ElevatedButton(
                   onPressed: () {
                     // predicciones().regLineal();
-                    predicciones().KNN();
+                    // predicciones().KNN();
+                    predicciones().RegLog();
                   },
                   child: const Text('Submit'),
                 ),
