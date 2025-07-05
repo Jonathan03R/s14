@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:s14/analisis/predicciones.dart';
+import 'package:s14/analisis/predicciones2.dart';
 
 void main() {
   runApp(const MyApp());
@@ -28,7 +29,8 @@ class MyApp extends StatelessWidget {
                     // predicciones().regLineal();
                     // predicciones().KNN();
                     // predicciones().RegLog();
-                    predicciones().ClaTree();
+                    // predicciones().ClaTree();
+                    predicciones2().KNN_REGLOG();
                   },
                   child: const Text('Submit'),
                 ),
