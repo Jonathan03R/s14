@@ -27,7 +27,8 @@ class MyApp extends StatelessWidget {
                   onPressed: () {
                     // predicciones().regLineal();
                     // predicciones().KNN();
-                    predicciones().RegLog();
+                    // predicciones().RegLog();
+                    predicciones().ClaTree();
                   },
                   child: const Text('Submit'),
                 ),

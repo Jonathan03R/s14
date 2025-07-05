@@ -4,6 +4,30 @@ import 'package:ml_dataframe/ml_dataframe.dart';
 class predicciones {
   predicciones();
 
+  Future<void> ClaTree() async {
+    final features = DataFrame([
+      ['feature_1', 'feature_2', 'output'],
+      [21, 2, 10],
+      [3, 33, 30],
+      [41, 4, 70],
+      [5, 50, 40],
+      [31, 5, 20],
+      [8, 43, 40],
+      [61, 14, 60],
+      [35, 50, 50],
+    ]);
+    final model = DecisionTreeClassifier(features, 'output', maxDepth: 3);
+    final testData = DataFrame([
+      ['feature_1', 'feature_2', 'output'],
+      [8, 12], // Datos de prueba
+      [9, 20],
+    ]);
+    print('Prediccion: ${model.predict(testData)}');
+    print(model.assess(features, MetricType.accuracy));
+    final pre = model.assess(features, MetricType.precision);
+    print('precision: $pre');
+  }
+
   Future<void> RegLog() async {
     final feature = DataFrame([
       ['feature_1', 'feature_2', 'output'],
