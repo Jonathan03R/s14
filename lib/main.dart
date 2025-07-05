@@ -25,7 +25,8 @@ class MyApp extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(vertical: 16.0),
                 child: ElevatedButton(
                   onPressed: () {
-                    predicciones().regLineal();
+                    // predicciones().regLineal();
+                    predicciones().KNN();
                   },
                   child: const Text('Submit'),
                 ),

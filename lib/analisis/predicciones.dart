@@ -3,6 +3,26 @@ import 'package:ml_dataframe/ml_dataframe.dart';
 
 class predicciones {
   predicciones();
+
+  Future<void> KNN() async {
+    final features = DataFrame([
+      ['feature_1', 'feature_2', 'output'],
+      [2, 2, 12],
+      [3, 3, 18],
+      [4, 4, 24],
+      [5, 5, 30],
+    ]);
+    final model = KnnClassifier(features, 'output', 3);
+    final testData = DataFrame([
+      ['feature_1', 'feature_2', 'output'],
+      [8, 12],
+    ]);
+    print('Prediccion: ${model.predict(testData)}');
+    print(model.assess(features, MetricType.accuracy));
+    final pre = model.assess(features, MetricType.precision);
+    print('precision: $pre');
+  }
+
   Future<void> regLineal() async {
     final features = DataFrame([
       ['feature_1', 'feature_2', 'output'],
